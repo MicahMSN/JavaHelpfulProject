@@ -1,9 +1,8 @@
-package poio.examples;
+package poio.examples.ioputstreambased;
 
-import constants.ELConstants;
+import lautil.ELConstants;
 import poio.POIOUtil;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 

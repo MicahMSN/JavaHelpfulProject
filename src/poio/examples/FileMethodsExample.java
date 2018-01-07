@@ -1,6 +1,6 @@
 package poio.examples;
 
-import constants.ELConstants;
+import lautil.ELConstants;
 import poio.POIOUtil;
 
 public class FileMethodsExample {
@@ -8,7 +8,7 @@ public class FileMethodsExample {
     public final static String testPath = ELConstants.FILE_READ_PATH;
 
     public static void main(String[] args)  {
-       //implementation of example upped in util class
+       //implementation of example upped in lautil class
         POIOUtil.printFileInfo(testPath);
     }
 

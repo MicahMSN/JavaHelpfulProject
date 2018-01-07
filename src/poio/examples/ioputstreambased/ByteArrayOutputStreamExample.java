@@ -1,6 +1,6 @@
-package poio.examples;
+package poio.examples.ioputstreambased;
 
-import constants.ELConstants;
+import lautil.ELConstants;
 import poio.POIOUtil;
 
 import java.io.ByteArrayOutputStream;
@@ -9,12 +9,12 @@ import java.io.IOException;
 
 public class ByteArrayOutputStreamExample {
 
-    public static final String testPath = ELConstants.GLOBAL_PATH +"file6.txt";
+    public static final String path6 = ELConstants.GLOBAL_PATH +"file6.txt";
 
     public static void main(String[] args) throws IOException {
         ByteArrayOutputStream baos = POIOUtil.strToByteArrayOutputStream(ELConstants.ALPHABET_ENGLISH_LOWER);
         //write to another output stream
-        try(FileOutputStream fos = new FileOutputStream(testPath)){
+        try(FileOutputStream fos = new FileOutputStream(path6)){
             baos.writeTo(fos);
         }
         //Reset for beginning state

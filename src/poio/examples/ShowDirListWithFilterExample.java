@@ -1,6 +1,6 @@
 package poio.examples;
 
-import constants.ELConstants;
+import lautil.ELConstants;
 import poio.POIOUtil;
 
 public class ShowDirListWithFilterExample {
@@ -8,7 +8,7 @@ public class ShowDirListWithFilterExample {
     public final static String ext = ".PROPERTIES";
 
     public static void main(String[] args) {
-        //implementation of example upped in util class
+        //implementation of example upped in lautil class
         POIOUtil.showListOfDirectory(testPath, ext);
     }
 }

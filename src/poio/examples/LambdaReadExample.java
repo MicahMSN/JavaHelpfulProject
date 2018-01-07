@@ -1,10 +1,9 @@
 package poio.examples;
 
-import constants.ELConstants;
+import lautil.ELConstants;
 import poio.POIOUtil;
 
 import java.io.IOException;
-import java.util.List;
 
 public class LambdaReadExample {
 

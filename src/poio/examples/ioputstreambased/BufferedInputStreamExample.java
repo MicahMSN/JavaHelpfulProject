@@ -1,21 +1,18 @@
-package poio.examples;
+package poio.examples.ioputstreambased;
 
 import poio.POIOUtil;
+
 import java.io.BufferedInputStream;
 import java.io.IOException;
 
-/**
- * Example of reading a text from string source,
- * using BufferedInputStream and mark feature .
- */
 public class BufferedInputStreamExample {
 
-    public static String testString = "This is author copytight sym &copy; , and this &copy is not.\n";
+    public static final String exampleString = "This is author copytight sym &copy; , and this &copy is not.\n";
 
     public static void main(String[] args) {
         int c;
         boolean marked = false;
-        try (BufferedInputStream bis = new BufferedInputStream(POIOUtil.strToByteArrayInputStream(testString))) {
+        try (BufferedInputStream bis = new BufferedInputStream(POIOUtil.strToByteArrayInputStream(exampleString))) {
             while ((c = bis.read()) != -1) {
                 switch (c) {
                     case '&':

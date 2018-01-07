@@ -1,15 +1,14 @@
-package poio.examples;
+package poio.examples.ioputstreambased;
 
-import constants.ELConstants;
+import lautil.ELConstants;
 import poio.POIOUtil;
+
 import java.io.ByteArrayInputStream;
 
 public class ByteArrayInputStreamExample {
 
-    public static String testString = ELConstants.ALPHABET_ENGLISH_LOWER;
-
     public static void main(String[] args) {
-        String tmp = testString;
+        String tmp = ELConstants.ALPHABET_ENGLISH_LOWER;
         byte[] b = tmp.getBytes();
         ByteArrayInputStream input1 = POIOUtil.strToByteArrayInputStream(tmp);
         ByteArrayInputStream input2 = new ByteArrayInputStream(b, 0, 3); // contains only 3 first characters

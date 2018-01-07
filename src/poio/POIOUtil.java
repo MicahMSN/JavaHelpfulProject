@@ -7,9 +7,6 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *  Some features of standart i/o module, which can be useful later.
- */
 public class POIOUtil {
 
     /**
@@ -88,6 +85,18 @@ public class POIOUtil {
     }
 
     /**
+     * Read char by char, using FileReader, from file and prints it.
+     */
+    public static void readWithFileReaderCharByChar(String filePath) throws IOException {
+        try(FileReader reader = new FileReader(filePath)){
+            int data;
+            while((data = reader.read()) != -1){
+                System.out.print((char) data);
+            }
+        }
+    }
+
+    /**
      * Reads list of strings from file, using jdk8. (prefered)
      */
     public static List<String> readListOfStringsFromFile(String filePath) throws IOException {
@@ -117,15 +126,46 @@ public class POIOUtil {
             f.write(buf);
         }
     }
+    /**
+     * Write String char by char in file, using FileReader.
+     */
+    public static void writeWithFileWriterCharByChar(String text, String destinationPath) throws IOException {
+        char[] buffer = new char[text.length()];
+        text.getChars(0,text.length(), buffer, 0);
+        try(FileWriter f = new FileWriter(destinationPath)){
+            for (int i = 0; i < buffer.length; i++) {
+                f.write(buffer[i]);
+            }
+        }
+    }
 
+    /**
+     * Perform source String in char array and then write it in file, using FileReader.
+     */
+    public static void writeWithFileWriterWithBuffer(String text, String destinationPath) throws IOException {
+        char[] buffer = new char[text.length()];
+        text.getChars(0,text.length(), buffer, 0);
+        try(FileWriter f = new FileWriter(destinationPath)){
+            f.write(buffer);
+        }
+    }
+
+    /**
+     * Perform String to ByteArrayInputStream
+     */
     public static ByteArrayInputStream strToByteArrayInputStream(String str){
         return new ByteArrayInputStream(str.getBytes());
     }
+
+    /**
+     * Perform String to ByteArrayOutputStream
+     */
     public static ByteArrayOutputStream strToByteArrayOutputStream(String str) throws IOException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream(); // close not needed
         baos.write(str.getBytes());
         return baos;
     }
+
 
 }
 

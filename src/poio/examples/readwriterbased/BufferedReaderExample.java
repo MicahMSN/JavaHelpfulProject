@@ -1,6 +1,6 @@
-package poio.examples;
+package poio.examples.readwriterbased;
 
-import constants.ELConstants;
+import lautil.ELConstants;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -8,13 +8,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 
-/**
- * Simple example of reading a text from file source,
- * using BufferedReader.
- */
 public class BufferedReaderExample {
 
-    public static String testSource = ELConstants.FILE_READ_PATH;
+    public static final String testSource = ELConstants.FILE_READ_PATH;
 
     public static void main(String[] args) {
         try (BufferedReader reader = new BufferedReader(
